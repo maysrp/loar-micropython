@@ -13,7 +13,7 @@ i2c=I2C(0,sda=Pin(16), scl=Pin(17), freq=400000)
 oled = SSD1306_I2C(128, 64, i2c) 
 
 # 接收数据
-while True:
+while True:     
     if lora.received_packet():
         lora.blink_led()
         payload = lora.read_payload()
